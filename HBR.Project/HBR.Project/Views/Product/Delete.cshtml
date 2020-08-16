@@ -1,0 +1,87 @@
+﻿@model HBR.Persistence.Models.Product
+
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="body">
+                <div class="row clearfix">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Producto</label>
+                            <input type="text" name="_Name" id="_Name" value="@Model._Name" class="form-control" placeholder=" " disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input type="text" name="Price" id="Price" value="@Model.Price" class="form-control" placeholder=" " disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Expiración</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-calendar"></i>
+                            </span>
+                            <input type="text" id="Expiration" value="@Model.Expiration" name="Expiration" class="datetimepicker form-control" data-dtp="dtp_BHWlZ" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Proveedor</label>
+                            <input type="text" name="_Provider" value="@Model._Provider" class="form-control" placeholder=" " disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Direccion</label>
+                            <input type="text" name="Direction" value="@Model.Direction" class="form-control" placeholder=" " disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <input type="text" name="idCategoriesid_Categories" value="@Model.idCategoriesid_Categories" class="form-control" placeholder=" " disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id_Product" value="@Model.id_Product" />
+        <div class="row clearfix">
+
+
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-danger btn-round">Delete</button>
+                <button type="button" class="btn btn-default btn-round btn-simple" id="btn_cancelar">Cancelar</button>
+            </div>
+        </div>
+
+    }
+</div>
+<script src="~/Content/Menu/js/jquery-3.3.1.min.js"></script>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#btn_cancelar').click(function () {
+            window.location.href = '/Product/Index';
+        })
+
+
+    })
+
+</script>

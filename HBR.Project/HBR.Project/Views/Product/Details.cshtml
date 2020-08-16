@@ -1,0 +1,93 @@
+﻿@model HBR.Persistence.Models.Product
+
+
+<section>
+    <div class="block-header">
+        <div class="row">
+            <div class="style="text-align:center">
+                <h2>Detalle de Producto</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" name="_Name" value="@Model._Name" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Precio</label>
+                                    <input type="text" name="Price" value="@Model.Price" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Expiracion</label>
+                                    <input type="text" name="Expiraction" value="@Model.Expiration" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Provider</label>
+                                    <input type="text" name="_Provider" value="@Model._Provider" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Direccion</label>
+                                    <input type="text" value="@Model.Direction" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <input type="text" value="@Model.idCategories._Name" class="form-control" disabled>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+
+
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-outline-primary" id="btn_cancelar">Regresar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<script src="~/Content/Menu/js/jquery-3.3.1.min.js"></script>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#btn_cancelar').click(function () {
+            window.location.href = '/Product/Index';
+        })
+
+
+    })
+
+</script>

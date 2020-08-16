@@ -1,0 +1,86 @@
+﻿@model IEnumerable<HBR.Persistence.Models.Product>
+
+@*aqui iba el filtro*@ 
+
+    @*<div class="row clearfix">
+        <div class="col-md-12">
+            <div class="col-sm-4">
+                <label class="form-label" for="dllcategories">Categoria del producto:</label>
+                <select id="dllcategories" name="idCategoriesid_Categories" data-live-search="true" class="form-control">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary btn-round" id="btnBuscar" onclick="btnBuscar">'>Buscar</button>
+            </div>
+        </div>
+    </div>*@
+
+    <div class="container-fluid">
+        @using (Html.BeginForm("Index", "Product", FormMethod.Post, new { onkeydown = "return event.keyCode!=13" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="card patients-list">
+                        <div class="body">
+                            <div class="tab-content m-t-12">
+                                <div class="tab-pane table-responsive active" id="All">
+                                    <table id="example" class="table table-striped table-bordered" style="width:100%; align-content:center">
+                                        <thead>
+                                            <tr class="col-sm-12">
+                                                <th>Productos</th>
+                                                <th>Precio</th>
+                                                <th>Expiraciòn</th>
+                                                <th>Proveedor</th>
+                                                <th>Direcciòn</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item._Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Price)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Expiration)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item._Provider)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Direction)
+                                                    </td>
+                                                </tr>
+
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+
+
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+
+
+
+    });
+
+
+</script>
+

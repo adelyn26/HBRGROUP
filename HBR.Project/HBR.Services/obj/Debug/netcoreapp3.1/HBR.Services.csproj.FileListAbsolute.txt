@@ -1,0 +1,15 @@
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Persistence.dll
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.csprojAssemblyReference.cache
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.AssemblyInfoInputs.cache
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.AssemblyInfo.cs
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Services.deps.json
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Services.runtimeconfig.json
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Services.runtimeconfig.dev.json
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Services.dll
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Services.pdb
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\bin\Debug\netcoreapp3.1\HBR.Persistence.pdb
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.csproj.CopyComplete
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.dll
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.pdb
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.genruntimeconfig.cache
+C:\Users\Adelyn\source\repos\HBR.Project\HBR.Services\obj\Debug\netcoreapp3.1\HBR.Services.csproj.CoreCompileInputs.cache

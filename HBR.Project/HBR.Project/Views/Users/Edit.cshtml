@@ -1,0 +1,130 @@
+﻿@model HBR.Persistence.Models.Users
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor httpContextAccessor
+<section>
+
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+
+
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")"><i class="zmdi zmdi-home"></i> Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index")"><i class="zmdi zmdi-library"></i> Editar Perfil</a></li>
+                    <li class="breadcrumb-item active">Registrar Perfil </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        @using (Html.BeginForm("Edit", "Users", FormMethod.Post, new { onkeydown = "return event.keyCode!=13" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="id_User" value="@Model.id_User" />
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row clearfix">
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" name="_Name" value="@Model._Name" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Apellido</label>
+                                        <input type="text" name="LastName" value="@Model.LastName" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row clearfix">
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <input type="text" name="Telephone" id="telephone" value="@Model.Telephone" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Correo Electronico</label>
+                                        <input type="text" name="Email" value="@Model.Email" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Contraseña</label>
+                                        <input type="text" name="_Password" value="@Model._Password" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+
+
+                        <div class="col-sm-12">
+
+                            <button type="submit" id="btnAction" class="btn btn-outline-primary">Editar</button>
+                            <a href="\Users\Profile?id=@Model.id_User" title="Regresar" type="button" class="btn btn-outline-primary">Regresar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</section>
+
+
+
+<script src="~/js/jquery.mask.js"></script>
+<script src="~/js/jquery.mask.min.js"></script>
+
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#telephone').mask('(000)000-0000');
+
+        $('#btn_cancelar').click(function () {
+            window.location.href = '/Users/Profile';
+
+        $('#edit').click(function () {
+            window.location.href = '/Users/Profile';
+        })
+
+
+        });
+
+        $(function () {
+
+            var name, LastName, telephone;
+            $("#btnAction").on('click', function () {
+                name = $("#name").val();
+                LastName = $("#lastName").val();
+                telephone = $("#telephone").val();
+                email = $("#email").val();
+                password = $("#password").val();
+
+                if (name.length == 0 || LastName.length == 0 || telephone.length == 0 || email.length == 0 || password.length == 0) {
+                    alert("Existen campos vacios");
+                    return false;
+                }
+                return true;
+            });
+
+        });
+
+</script>

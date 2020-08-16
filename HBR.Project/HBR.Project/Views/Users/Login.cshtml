@@ -1,0 +1,100 @@
+﻿@model IEnumerable<HBR.Persistence.Models.Users>
+
+<!DOCTYPE html>
+<html lang="en">
+@{
+    Layout = null;
+}
+<head>
+    <title>Inicio de Seccion |HBR </title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gaze Sign up & login Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+    <script>
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <!-- Meta tags -->
+    <!--stylesheets-->
+    <!--//style sheet end here-->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="mid-class">
+        <div class="art-right-w3ls">
+            <h2>Iniciar Secciòn y Registrar</h2>
+            <form action="#" method="post">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Raw(TempData["msg"])
+                    <div class="main">
+                        <div class="form-left-to-w3l">
+                            <input type="email" id="email" name="Email" placeholder="Email" >
+                        </div>
+                        <div class="form-left-to-w3l ">
+                            <input type="password" id="password" name="_Password" placeholder="Contraseña" >
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="btnn">
+                        <button type="submit" id="btnAction">Iniciar Seccion</button>
+                        <p class="alert-warning" id="warning"></p>
+                    </div>
+
+                    <div class="w3layouts_more-buttn">
+                        <h3>
+                            No tiene una cuenta..?
+                            <a href="/Users/Register" style="color:aqua">
+                                Registrese aqui!
+                            </a>
+                        </h3>
+                    </div>
+                }
+                @if (ViewBag.Message != null)
+                {
+                    <script type="text/javascript">
+
+                        window.onload = function () {
+                        alert("@ViewBag.Message");
+                        };
+                    </script>
+
+                }
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+ 
+
+    $(function () {
+
+        var email, password;
+        $("#btnAction").on('click', function () {
+            email = $("#email").val();
+            password = $("#password").val();
+
+            if (email.length == 0 || password.length == 0) {
+                alert("Existen campos vacios");
+                return false;
+            }
+            return true;
+        });
+
+    });
+
+
+</script>
+
